@@ -20,6 +20,9 @@ module load R/4.1.0-foss-2018b
 input_folder=$1
 output_folder=$2
 
+echo "Merging read summaries"
+Rscript merge_summaries.R $output_folder
+
 echo "Calling SNPs and haplotypes"
 Rscript haplotypR_callSNPs_haplotypes.R $input_folder $output_folder
 

@@ -6,8 +6,16 @@
 # monica.golumbeanu@unibas.ch
 ######################
 
-merge_summary_folder = "/scicore/home/mynaco16/GROUP/analysis_AmpSeq_Daniela_Monica/analysis_classical_AmpSeq/output_files/SummaryMerge/"
-merge_summary_file = "/scicore/home/mynaco16/GROUP/analysis_AmpSeq_Daniela_Monica/analysis_classical_AmpSeq/output_files/merged_reads_table.txt"
+# Example of output folder for debugging:
+# out_folder = "/scicore/home/mynaco16/GROUP/analysis_AmpSeq_Daniela_Monica/analysis_classical_AmpSeq/output_files/"
+
+# Retrieve inputs
+args = commandArgs(TRUE)
+out_folder = args[1]
+
+# Build the paths of the relevant folders
+merge_summary_folder = paste0(out_folder, "/SummaryMerge/")
+merge_summary_file = paste0(out_folder, "/merged_reads_table.txt")
 
 merged_tab = NULL
 for (summary_file in list.files(merge_summary_folder, full.names = TRUE)) {
